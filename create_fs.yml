@@ -2,8 +2,6 @@
 - name: creation des FS applicatif
   hosts: all
   become: yes
-  become_method: sudo
-  become_flags: '-'
   vars: 
     AP_CODE: "AP10631"
     AP_NUM_ID: "10631"
