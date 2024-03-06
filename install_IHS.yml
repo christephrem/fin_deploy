@@ -2,8 +2,6 @@
 - hosts: all
   become: yes
   gather_facts: yes
-  become_method: "sudo"
-  become_flags: "-"
   tasks:
     - name: re-read fact 
       setup: filter=ansible_local
