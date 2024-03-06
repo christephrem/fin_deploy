@@ -13,6 +13,7 @@
     logs_size: 10G
   
   tasks:
-    - incude_role:
+    - name: appel du role 
+      incude_role:
         name: create_fs
 
