@@ -13,6 +13,5 @@
     logs_size: 10G
   
   tasks:
-    - incude_role:
-      name: creation_fs
+    - role: creation_fs
 
