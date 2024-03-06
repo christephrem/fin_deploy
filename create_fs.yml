@@ -12,8 +12,6 @@
     applis_size: 10G
     logs_size: 10G
   
-  tasks:
-    - name: appel du role 
-      incude_role:
-        name: create_fs
+  roles: 
+    - create_fs
 
