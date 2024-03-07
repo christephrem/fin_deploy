@@ -79,7 +79,6 @@
     name: "/applis/{{ AP_NUM_ID }}-{{ AP_PENTAGRAME }}"
     src: "/dev/vg_apps/lv_{{ AP_PENTAGRAME }}"
     fstype: ext4
-    opts: default,nodev
     state: mounted
 
 - name: creation du lv_logs
@@ -100,7 +99,4 @@
     name: "/applis/logs/{{ AP_NUM_ID }}-{{ AP_PENTAGRAME }}"
     src: "/dev/vg_apps/lv_logs_{{ AP_PENTAGRAME }}"
     fstype: ext4
-    opts: default,nodev
-    dump: "1"
-    passno: "2" 
     state: mounted
