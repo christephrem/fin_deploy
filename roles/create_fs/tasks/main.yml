@@ -13,7 +13,7 @@
 - name: droit sur repertoire
   file:
     path: "{{ item }}"
-    owner: "was"
+    owner: "fin"
     group: "web"
     state: directory
     recurse: yes
