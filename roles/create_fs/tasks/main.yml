@@ -85,7 +85,7 @@
   lvol:
     vg: vg_apps
     lv: "lv_logs_{{ AP_PENTAGRAME }}"
-    size: "{{ log_size }}"
+    size: "{{ logs_size }}"
     force: no
     shrink: no
 
