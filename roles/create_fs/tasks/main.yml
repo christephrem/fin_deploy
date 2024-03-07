@@ -50,7 +50,7 @@
 - name: ceration du FS 
   filesystem:
     fstype: ext4
-    dev: "/dev/mapper/vg_apps_lv_dlv_{{ AP_PENTAGRAME }}"
+    dev: "/dev/vg_apps_lv_dlv_{{ AP_PENTAGRAME }}"
 
 - name: montage du volume 
   mount:
