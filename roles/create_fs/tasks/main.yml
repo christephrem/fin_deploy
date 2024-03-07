@@ -58,7 +58,7 @@
     src: "/dev/vg_apps/lv_dlv_{{ AP_PENTAGRAME }}"
     fstype: ext4
     opts: default,nodev
-    dumps: "1"
+    dumps: "0"
     passno: "2"
     state: mounted
 
@@ -83,7 +83,7 @@
     src: "/dev/vg_apps/lv_{{ AP_PENTAGRAME }}"
     fstype: ext4
     opts: default,nodev
-    dumps: "1"
+    dumps: "0"
     passno: "2" 
     state: mounted
 
@@ -106,6 +106,6 @@
     src: "/dev/vg_apps/lv_logs_{{ AP_PENTAGRAME }}"
     fstype: ext4
     opts: default,nodev
-    dumps: "1"
+    dumps: "0"
     passno: "2" 
     state: mounted
