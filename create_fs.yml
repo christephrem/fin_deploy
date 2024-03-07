@@ -8,7 +8,7 @@
     AP_PENTAGRAME: "mbm00"
     delivery_size: 10G
     applis_size: 10G
-    logs_size: 10G
+    logs_size: 3G
   
   roles: 
     - create_fs
