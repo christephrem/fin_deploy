@@ -55,11 +55,8 @@
 - name: montage du volume 
   mount:
     name: "/applis/delivery/{{ AP_NUM_ID }}-{{ AP_PENTAGRAME }}"
-    src: "/dev/mapper/vg_apps_lv_dlv_{{ AP_PENTAGRAME }}"
+    src: "/dev/vg_apps/lv_dlv_{{ AP_PENTAGRAME }}"
     fstype: ext4
-    opts: default,nodev
-    dump: "1"
-    passno: "2"
     state: mounted
 
 
@@ -80,11 +77,9 @@
 - name: montage de volume 
   mount: 
     name: "/applis/{{ AP_NUM_ID }}-{{ AP_PENTAGRAME }}"
-    src: "/dev/mapper/vg_apps_lv_{{ AP_PENTAGRAME }}"
+    src: "/dev/vg_apps/lv_{{ AP_PENTAGRAME }}"
     fstype: ext4
     opts: default,nodev
-    dump: "1"
-    passno: "2" 
     state: mounted
 
 - name: creation du lv_logs
@@ -98,12 +93,12 @@
 - name: cration fs log 
   filesystem:
     fstype: ext4 
-    dev: "/dev/mapper/vg_apps_lv_logs_{{ AP_PENTAGRAME }}"
+    dev: "/dev/vg_apps/lv_logs_{{ AP_PENTAGRAME }}"
 
 - name: montage du volume
   mount: 
     name: "/applis/logs/{{ AP_NUM_ID }}-{{ AP_PENTAGRAME }}"
-    src: "/dev/mapper/vg_apps_lv_logs_{{ AP_PENTAGRAME }}"
+    src: "/dev/vg_apps/lv_logs_{{ AP_PENTAGRAME }}"
     fstype: ext4
     opts: default,nodev
     dump: "1"
