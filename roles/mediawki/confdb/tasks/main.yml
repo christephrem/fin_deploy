@@ -1,0 +1,13 @@
+--- 
+- name: mediawiki database
+  community.mysql.mysql_db:
+    name: "{{mediawiki_db_name}}"
+    state: present 
+
+- name: mediawiki user and password
+  community.mysql.mysql_user: 
+    name: "{{mediawiki_db_user}}"
+    password: "{{mediawiki_db_pass}}"
+    priv: "{{mediawiki_db_name}}.*:ALL"
+    hosts: all
+    state: present 

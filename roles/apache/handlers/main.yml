@@ -1,0 +1,5 @@
+---
+- name: demarrage d'apache avec handler 
+  service:
+    name: apache2
+    state: restarted 

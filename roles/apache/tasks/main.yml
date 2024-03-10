@@ -1,0 +1,19 @@
+---
+- name: mise a jour des packages de la distrib
+  shell: apt update -y
+
+- name: installtion de apache 
+  apt: 
+    name: apache2
+    state: present 
+
+- name: demarrage du service apache
+  service: 
+    name: apache2
+    state: started
+    enabled: yes
+
+- name: install PHP
+  include: "php-install.yml"
+  when: php_install|default(False)|bool 
+      

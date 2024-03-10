@@ -1,0 +1,6 @@
+- name: install PHP
+  apt:
+    name: "php,php-mysql,php-xml,php-mbstring,php-gd,php-intl"
+    state: latest
+    changed_when: yes
+    notify: [ "apache restart" ]

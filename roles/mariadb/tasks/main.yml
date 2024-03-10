@@ -1,0 +1,16 @@
+---
+- name: installation de mariadb
+  apt:
+    name: "mariadb-server,python3-mysqldb"
+    state: present 
+
+- name: demarrage du service 
+  service: 
+    name: mariadb
+    state: started
+    enabled: yes 
+    
+- name: changer le port d'ecoute 
+  shell: /usr/bin/sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mariadb.conf.d/50-server.cnf 
+  changed_when: yes
+  notify: [ "mariadb restart" ]
