@@ -1,0 +1,30 @@
+---
+- name: ajout de l'utilisateur applicatif 
+  command:
+    usermod -a -G www-data web
+- name: "mediawiki directory"
+  file: 
+    path: "{{mediawiki_directory}}"
+    owner: www-data
+    group: www-data
+    remote_src: yes
+    extra_opts: --transforms=s/mediawiki-[0-9\.]*\///
+- name: add g+w au groupe
+  command:
+    chmod -R g+w "{{mediawiki_directory}}"
+- name: "configuration du mediawiki" 
+  agrs: 
+    creates: "{{mediawiki_directory}}/LocalSettings.php"
+    chdir: "{{mediawiki_maintenance_directory}}"
+  command: 
+    php install.php --scriptpath /{{mediawiki_name}}
+    -- dbname mediawiki --lang fr
+    -- dbuser {{mediawiki_db_user}}
+    -- dbpass {{mediawiki_db_pass}}
+    -- pass {{mediawiki_admin_pass}}
+    -- dbserver {{mediawiki_db_hosts}}
+    -- server http://host 
+  run_once: yes
+  delegate_to: "{{item}}"
+  with_items: "{{groups.apache}}"
+
